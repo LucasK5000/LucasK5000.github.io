@@ -20,7 +20,6 @@
             color: white;
             padding: 20px;
             text-align: center;
-            position: relative; /* Allow positioning of the planet image */
         }
 
         header nav ul {
@@ -36,63 +35,6 @@
         header nav ul li a {
             color: white;
             text-decoration: none;
-        }
-
-        /* Planet Image Styles */
-        #planet {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 80px; /* Size for circular appearance */
-            height: 80px; /* Size for circular appearance */
-            border-radius: 50%; /* Makes the image a circle */
-            animation: spin 5s infinite linear; /* Spinning animation */
-            z-index: 2; /* Planet image stays on top */
-        }
-
-        /* Spinning Animation for the Planet */
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* Small Image Styles (moving around the planet) */
-        #small-image {
-            position: absolute;
-            top: 50%; /* Position small image relative to the planet */
-            left: 100%; /* Start to the right of the planet */
-            width: 40px;
-            height: 40px;
-            margin-top: -20px; /* Offset to center it vertically */
-            margin-left: 10px; /* Small gap between planet and small image */
-            animation: revolve 10s infinite linear; /* Circular motion animation */
-            z-index: 1; /* Initially behind the planet */
-            transform-origin: -90px; /* Set the origin of the rotation to the left of the planet */
-            cursor: pointer; /* Change cursor to indicate clickable */
-        }
-
-        /* Animation to make the small image revolve around the planet in counterclockwise direction */
-        @keyframes revolve {
-            0% {
-                transform: rotate(0deg) translateX(90px); /* Start to the right of the planet */
-            }
-            25% {
-                transform: rotate(-90deg) translateX(90px); /* Bottom side */
-            }
-            50% {
-                transform: rotate(-180deg) translateX(90px); /* Left side */
-            }
-            75% {
-                transform: rotate(-270deg) translateX(90px); /* Top side */
-            }
-            100% {
-                transform: rotate(-360deg) translateX(90px); /* Right side, completes full rotation */
-            }
-        }
-
-        /* Hover Effect - bring the small image in front of the planet */
-        #planet:hover + #small-image {
-            z-index: 3; /* Bring the small image in front of the planet */
         }
 
         section {
@@ -136,8 +78,6 @@
 </head>
 <body>
     <header>
-        <img id="planet" src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*omLbvvOv1gZjhAQIDh3cCw.png" alt="Spinning Planet">
-        <img id="small-image" src="https://www.pngkey.com/png/full/439-4392668_pixel-spaceship-png-pixel-spaceship.png" alt="Small Image"> <!-- Small moving image -->
         <h1>Welcome to My Website</h1>
         <nav>
             <ul>
