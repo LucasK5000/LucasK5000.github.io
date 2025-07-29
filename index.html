@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A website about Lucas, with fun easter eggs!">
-    <title>HI!</title>
+    <title>Welcome to Lucas's Website!</title>
     <style>
         /* CSS Styles */
         body {
-            font-family: Times New Roman, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #3f3f45; 
@@ -16,7 +16,7 @@
         }
 
         header {
-            background-color: #4a485e; /* Black header background */
+            background-color: #4a485e; /* Header background */
             color: white;
             padding: 20px;
             text-align: center;
@@ -43,8 +43,8 @@
             position: absolute;
             top: 10px;
             right: 10px;
-            width: 80px; /* Adjusted size for circular appearance */
-            height: 80px; /* Adjusted size for circular appearance */
+            width: 80px; /* Size for circular appearance */
+            height: 80px; /* Size for circular appearance */
             border-radius: 50%; /* Makes the image a circle */
             animation: spin 5s infinite linear; /* Spinning animation */
             z-index: 2; /* Planet image stays on top */
@@ -98,74 +98,75 @@
         section {
             padding: 20px;
             margin: 10px;
-        }
-
-        section#home {
-            background-color: #505059; /* Darker navy blue */
-        }
-
-        section#about {
-            background-color: #505059; /* Black background for About */
-        }
-
-        
-        section#contact {
-            background-color: #505059; /* Black background for Contact */
+            background-color: #505059; /* Consistent background for sections */
         }
 
         footer {
             text-align: center;
             padding: 10px;
-            background-color: #505059; /* Black footer */
+            background-color: #505059; /* Footer background */
             color: white;
         }
 
-       
+        /* Secret Message Styles */
+        #secret-message {
+            display: none; /* Initially hidden */
+            margin-top: 20px;
+            color: #ffcc00; /* Highlighted color for the secret message */
+        }
     </style>
     <script>
         // JavaScript for Easter Egg and Interactions
-        // Show a secret message when the small image is clicked
-        document.getElementById("small-image").addEventListener("click", function() {
-            const secretMessage = document.getElementById("secret-message");
-            secretMessage.style.display = "block"; // Show the hidden message
-        });
+        document.addEventListener("DOMContentLoaded", function() {
+            // Show a secret message when the small image is clicked
+            document.getElementById("small-image").addEventListener("click", function() {
+                const secretMessage = document.getElementById("secret-message");
+                secretMessage.style.display = "block"; // Show the hidden message
+            });
 
-        // Hover effect to change the background color of the "Easter Eggs" section
-        const easterEggElement = document.getElementById("easter-eggs");
-
-        easterEggElement.addEventListener("mouseover", function() {
-            easterEggElement.style.backgroundColor = "#ffcc00"; // Change color when hovering
+            // Hover effect to change the background color of the "Easter Eggs" section
+            const easterEggElement = document.getElementById("easter-eggs");
+            if (easterEggElement) {
+                easterEggElement.addEventListener("mouseover", function() {
+                    easterEggElement.style.backgroundColor = "#ffcc00"; // Change color when hovering
+                });
+            }
         });
     </script>
 </head>
 <body>
     <header>
-            <img id="planet" src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*omLbvvOv1gZjhAQIDh3cCw.png" alt="Spinning Planet">
-        </a>
+        <img id="planet" src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*omLbvvOv1gZjhAQIDh3cCw.png" alt="Spinning Planet">
         <img id="small-image" src="https://www.pngkey.com/png/full/439-4392668_pixel-spaceship-png-pixel-spaceship.png" alt="Small Image"> <!-- Small moving image -->
         <h1>Welcome to My Website</h1>
         <nav>
             <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <section id="home">
         <h2>Home</h2>
-        <p>Hello, I'm Lucas, and this is my personal website made by me!.</p>
+        <p>Hello, I'm Lucas, and this is my personal website made by me!</p>
     </section>
 
     <section id="about">
         <h2>About Me</h2>
-        <p>Hello! I don't like to talk about myself</p>
+        <p>Hello! I don't like to talk about myself.</p>
     </section>
 
-  
     <section id="contact">
         <h2>Contact</h2>
-        <p>If you'd like to reach out, you can email me at Lucasinator5911@gmail.com.</p>
+        <p>If you'd like to reach out, you can email me at <a href="mailto:Lucasinator5911@gmail.com">Lucasinator5911@gmail.com</a>.</p>
     </section>
 
     <footer>
         <p>Created by Lucas</p>
     </footer>
+
+    <div id="secret-message">🎉 Surprise! You've found the secret message! 🎉</div>
+</body>
+</html>
