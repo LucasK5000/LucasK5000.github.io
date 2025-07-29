@@ -8,15 +8,15 @@
     <style>
         /* CSS Styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: Times New Roman, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #434343; /* Gray background */
+            background-color: navy; /* Navy blue background */
             color: white; /* White text for contrast */
         }
 
         header {
-            background-color: #2c2c2c; /* Darker gray header background */
+            background-color: black; /* Black header background */
             color: white;
             padding: 20px;
             text-align: center;
@@ -98,87 +98,94 @@
         section {
             padding: 20px;
             margin: 10px;
-            background-color: #555; /* Lighter gray for sections */
         }
 
         section#home {
-            background-color: #444; /* Darker gray for Home */
+            background-color: #001f3d; /* Darker navy blue */
         }
 
         section#about {
-            background-color: #444; /* Darker gray for About */
+            background-color: black; /* Black background for About */
         }
 
+        
         section#contact {
-            background-color: #444; /* Darker gray for Contact */
+            background-color: black; /* Black background for Contact */
         }
 
         footer {
             text-align: center;
             padding: 10px;
-            background-color: #2c2c2c; /* Darker gray footer */
+            background-color: black; /* Black footer */
             color: white;
         }
 
         #secret-message {
             display: none;
-            background-color: #555; /* Lighter gray for secret message */
+            background-color: #001f3d;
             padding: 10px;
             margin-top: 10px;
-            color: white; /* White text for secret message */
+            color: white; /* Yellow text for secret message */
         }
     </style>
     <script>
         // JavaScript for Easter Egg and Interactions
-        try {
-            // Show a secret message when the small image is clicked
-            document.getElementById("small-image").addEventListener("click", function() {
-                const secretMessage = document.getElementById("secret-message");
-                secretMessage.style.display = "block"; // Show the hidden message
-            });
+        // Show a secret message when the small image is clicked
+        document.getElementById("small-image").addEventListener("click", function() {
+            const secretMessage = document.getElementById("secret-message");
+            secretMessage.style.display = "block"; // Show the hidden message
+        });
 
-            // Hover effect to change the background color of the "Easter Eggs" section
-            const easterEggElement = document.getElementById("easter-eggs");
+        // Hover effect to change the background color of the "Easter Eggs" section
+        const easterEggElement = document.getElementById("easter-eggs");
 
-            easterEggElement.addEventListener("mouseover", function() {
-                easterEggElement.style.backgroundColor = "#ffcc00"; // Change color when hovering
-            });
-        } catch (error) {
-            console.error("An error occurred: ", error);
-        }
+        easterEggElement.addEventListener("mouseover", function() {
+            easterEggElement.style.backgroundColor = "#ffcc00"; // Change color when hovering
+        });
     </script>
 </head>
 <body>
     <header>
-        <a href="https://sites.google.com/view/vizon2" target="_blank">
+        <a href="https://sites.google.com/view/vizon/home" target="_blank">
             <!-- Spinning planet image that links to the specified URL -->
             <img id="planet" src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*omLbvvOv1gZjhAQIDh3cCw.png" alt="Spinning Planet">
         </a>
-        <!-- Small Image now leads to another page -->
-        <a href="https://sites.google.com/view/vizon2/home/page" target="_blank">
-            <img id="small-image" src="https://www.pngkey.com/png/full/439-4392668_pixel-spaceship-png-pixel-spaceship.png" alt="Small Image"> <!-- Small moving image -->
-        </a>
+        <img id="small-image" src="https://www.pngkey.com/png/full/439-4392668_pixel-spaceship-png-pixel-spaceship.png" alt="Small Image"> <!-- Small moving image -->
         <h1>Welcome to My Website</h1>
-            </header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href=”https://sites.google.com/view/vizon/shop-vizon”>Shop VIZON</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <section id="home">
         <h2>Home</h2>
-        <p>Hello, I'm Lucas, and this is my personal website. Have fun and enjoy some games and other fun things!</p>
+        <p>Hello, I'm Lucas, and this is my personal website. Explore and enjoy hidden surprises along the way!</p>
     </section>
 
     <section id="about">
         <h2>About Me</h2>
-        <p>I enjoy playing games like Pokemon and MineCraft and I love learning how to code so I can make websites like this one!</p>
+        <p>I enjoy playing games like Pokemon and MineCraft and I love creating websites like this one!</p>
     </section>
 
+  
     <section id="contact">
         <h2>Contact</h2>
-        <p>If you'd like to reach out to report bugs or other things, you can email me at Lucasinator5911@gmail.com.</p>
+        <p>If you'd like to reach out, you can email me at Lucasinator5911@gmail.com.</p>
     </section>
 
     <footer>
-        <p>Created by Lucas, Chat GPT, and ZZZ Code AI</p>
-        <p>
+        <p>Created by Lucas | © 2024</p>
     </footer>
 
+    <!-- Hidden secret message -->
+    <div id="secret-message">
+        <h3>Surprise! You found the secret message!</h3>
+        <p>Thanks for exploring my website. You're awesome!</p>
+    </div>
+</body>
 </html>
