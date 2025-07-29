@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A website about Lucas, with fun easter eggs!">
+    <title>About Lucas - Hidden Surprises</title>
+    <style>
+        /* CSS Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #434343; /* Gray background */
+            color: white; /* White text for contrast */
+        }
+
+        header {
+            background-color: #2c2c2c; /* Darker gray header background */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative; /* Allow positioning of the planet image */
+        }
+
+        header nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Planet Image Styles */
+        #planet {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 80px; /* Adjusted size for circular appearance */
+            height: 80px; /* Adjusted size for circular appearance */
+            border-radius: 50%; /* Makes the image a circle */
+            animation: spin 5s infinite linear; /* Spinning animation */
+            z-index: 2; /* Planet image stays on top */
+        }
+
+        /* Spinning Animation for the Planet */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Small Image Styles (moving around the planet) */
+        #small-image {
+            position: absolute;
+            top: 50%; /* Position small image relative to the planet */
+            left: 100%; /* Start to the right of the planet */
+            width: 40px;
+            height: 40px;
+            margin-top: -20px; /* Offset to center it vertically */
+            margin-left: 10px; /* Small gap between planet and small image */
+            animation: revolve 10s infinite linear; /* Circular motion animation */
+            z-index: 1; /* Initially behind the planet */
+            transform-origin: -90px; /* Set the origin of the rotation to the left of the planet */
+            cursor: pointer; /* Change cursor to indicate clickable */
+        }
+
+        /* Animation to make the small image revolve around the planet in counterclockwise direction */
+        @keyframes revolve {
+            0% {
+                transform: rotate(0deg) translateX(90px); /* Start to the right of the planet */
+            }
+            25% {
+                transform: rotate(-90deg) translateX(90px); /* Bottom side */
+            }
+            50% {
+                transform: rotate(-180deg) translateX(90px); /* Left side */
+            }
+            75% {
+                transform: rotate(-270deg) translateX(90px); /* Top side */
+            }
+            100% {
+                transform: rotate(-360deg) translateX(90px); /* Right side, completes full rotation */
+            }
+        }
+
+        /* Hover Effect - bring the small image in front of the planet */
+        #planet:hover + #small-image {
+            z-index: 3; /* Bring the small image in front of the planet */
+        }
+
+        section {
+            padding: 20px;
+            margin: 10px;
+            background-color: #555; /* Lighter gray for sections */
+        }
+
+        section#home {
+            background-color: #444; /* Darker gray for Home */
+        }
+
+        section#about {
+            background-color: #444; /* Darker gray for About */
+        }
+
+        section#contact {
+            background-color: #444; /* Darker gray for Contact */
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #2c2c2c; /* Darker gray footer */
+            color: white;
+        }
+
+        #secret-message {
+            display: none;
+            background-color: #555; /* Lighter gray for secret message */
+            padding: 10px;
+            margin-top: 10px;
+            color: white; /* White text for secret message */
+        }
+    </style>
+    <script>
+        // JavaScript for Easter Egg and Interactions
+        try {
+            // Show a secret message when the small image is clicked
+            document.getElementById("small-image").addEventListener("click", function() {
+                const secretMessage = document.getElementById("secret-message");
+                secretMessage.style.display = "block"; // Show the hidden message
+            });
+
+            // Hover effect to change the background color of the "Easter Eggs" section
+            const easterEggElement = document.getElementById("easter-eggs");
+
+            easterEggElement.addEventListener("mouseover", function() {
+                easterEggElement.style.backgroundColor = "#ffcc00"; // Change color when hovering
+            });
+        } catch (error) {
+            console.error("An error occurred: ", error);
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <a href="https://sites.google.com/view/vizon2" target="_blank">
+            <!-- Spinning planet image that links to the specified URL -->
+            <img id="planet" src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*omLbvvOv1gZjhAQIDh3cCw.png" alt="Spinning Planet">
+        </a>
+        <!-- Small Image now leads to another page -->
+        <a href="https://sites.google.com/view/vizon2/home/page" target="_blank">
+            <img id="small-image" src="https://www.pngkey.com/png/full/439-4392668_pixel-spaceship-png-pixel-spaceship.png" alt="Small Image"> <!-- Small moving image -->
+        </a>
+        <h1>Welcome to My Website</h1>
+            </header>
+
+    <section id="home">
+        <h2>Home</h2>
+        <p>Hello, I'm Lucas, and this is my personal website. Have fun and enjoy some games and other fun things!</p>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I enjoy playing games like Pokemon and MineCraft and I love learning how to code so I can make websites like this one!</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>If you'd like to reach out to report bugs or other things, you can email me at Lucasinator5911@gmail.com.</p>
+    </section>
+
+    <footer>
+        <p>Created by Lucas, Chat GPT, and ZZZ Code AI</p>
+        <p>
+    </footer>
+
+</html>
